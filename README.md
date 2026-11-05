@@ -7,6 +7,7 @@ An enterprise-grade, digital single-window portal designed to streamline, automa
 ## Architecture Overview
 
 IndustryOne is structured with a decoupled, high-performance architecture:
+
 - **Frontend**: Vanilla HTML5, modular CSS3 (`login.css`), responsive Tailwind CSS utilities, and vanilla JavaScript with strict GIGW / W3C WCAG accessibility standards.
 - **Backend API**: Java 17+, Spring Boot 3, Spring Data JPA, Hibernate, HikariCP connection pooling, and BCrypt cryptographic password hashing.
 - **Database**: PostgreSQL hosted on cloud Supabase with multi-role partitioned user tables, automated session token management, brute-force lockout tracking, and administrative incident auditing.
@@ -65,11 +66,11 @@ Industry-Approval-System/
 
 The database comes pre-seeded with three dedicated role accounts:
 
-| Role | Portal Page | Default Username | Default Password |
-| :--- | :--- | :--- | :--- |
-| **Directorate Admin** | `AdminLogin.html` | `admin@industryone.gov.in` | `Admin@12345` |
-| **Scrutiny Officer** | `AdminLogin.html` | `officer@industryone.gov.in` | `Officer@12345` |
-| **Enterprise Applicant**| `login.html` | `entrepreneur@example.com` | `Entrepreneur@12345` |
+| Role                     | Portal Page       | Default Username             | Default Password     |
+| :----------------------- | :---------------- | :--------------------------- | :------------------- |
+| **Directorate Admin**    | `AdminLogin.html` | `admin@industryone.gov.in`   | `Admin@12345`        |
+| **Scrutiny Officer**     | `AdminLogin.html` | `officer@industryone.gov.in` | `Officer@12345`      |
+| **Enterprise Applicant** | `login.html`      | `entrepreneur@example.com`   | `Entrepreneur@12345` |
 
 ---
 
@@ -77,14 +78,14 @@ The database comes pre-seeded with three dedicated role accounts:
 
 All backend APIs are exposed under `/api`:
 
-| Method | Endpoint | Description |
-| :--- | :--- | :--- |
-| `POST` | `/api/login` | Multi-role authentication with BCrypt & brute-force lockout |
-| `POST` | `/api/register` | Enterprise applicant self-registration |
-| `POST` | `/api/logout` | Invalidate active authentication session |
-| `GET` | `/api/verify` | Verify authentication token validity & active role |
-| `GET` | `/api/admin/alerts` | Fetch recent security lockout & intrusion alerts |
-| `POST` | `/api/admin/alerts/{id}/resolve` | Mark an alert as resolved by an administrator |
+| Method | Endpoint                         | Description                                                 |
+| :----- | :------------------------------- | :---------------------------------------------------------- |
+| `POST` | `/api/login`                     | Multi-role authentication with BCrypt & brute-force lockout |
+| `POST` | `/api/register`                  | Enterprise applicant self-registration                      |
+| `POST` | `/api/logout`                    | Invalidate active authentication session                    |
+| `GET`  | `/api/verify`                    | Verify authentication token validity & active role          |
+| `GET`  | `/api/admin/alerts`              | Fetch recent security lockout & intrusion alerts            |
+| `POST` | `/api/admin/alerts/{id}/resolve` | Mark an alert as resolved by an administrator               |
 
 ---
 
@@ -93,18 +94,23 @@ All backend APIs are exposed under `/api`:
 ### 1. Backend Service (Spring Boot)
 
 #### Prerequisites:
+
 - Java JDK 17 or higher
 - Internet access for Maven dependencies and Supabase cloud database
 
 #### Running with Maven:
+
 ```powershell
 cd Industryone-database
 ./mvnw spring-boot:run
 ```
+
 The server starts on port `8080`.
 
 #### Environment Variable Overrides:
+
 You can customize database credentials without modifying code:
+
 ```powershell
 $env:DB_URL = "jdbc:postgresql://your-db-host:5432/postgres?sslmode=require"
 $env:DB_USERNAME = "postgres"
