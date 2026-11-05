@@ -1,0 +1,2000 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>IndustryOne | About Us</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+            background: #07152F;
+        }
+
+        body {
+            margin: 0 !important;
+            padding: 0 !important;
+
+            min-height: 100vh;
+
+            color: #F8F1DF;
+
+            font-family: "DM Sans", sans-serif;
+
+            overflow-x: hidden;
+
+            background:
+                radial-gradient(circle at 15% 10%,
+                    rgba(45, 91, 160, 0.35),
+                    transparent 32%),
+                radial-gradient(circle at 85% 30%,
+                    rgba(50, 105, 190, 0.18),
+                    transparent 30%),
+                linear-gradient(135deg,
+                    #07152F 0%,
+                    #0A2045 48%,
+                    #06132B 100%);
+        }
+
+
+        /* =====================================================
+           BLUEPRINT GRID
+        ===================================================== */
+
+        .blueprint-grid {
+            background-image:
+                linear-gradient(rgba(248, 241, 223, 0.035) 1px,
+                    transparent 1px),
+                linear-gradient(90deg,
+                    rgba(248, 241, 223, 0.035) 1px,
+                    transparent 1px);
+
+            background-size: 50px 50px;
+        }
+
+
+        /* =====================================================
+           BACKGROUND ORBS
+        ===================================================== */
+
+        .orb {
+            position: fixed;
+
+            border-radius: 50%;
+
+            pointer-events: none;
+
+            z-index: -1;
+
+            filter: blur(2px);
+        }
+
+        .orb-one {
+            width: 300px;
+            height: 300px;
+
+            top: 100px;
+            left: -160px;
+
+            background: rgba(56, 110, 190, 0.15);
+
+            animation:
+                floatOne 10s ease-in-out infinite;
+        }
+
+        .orb-two {
+            width: 250px;
+            height: 250px;
+
+            top: 650px;
+            right: -130px;
+
+            background: rgba(80, 137, 213, 0.12);
+
+            animation:
+                floatTwo 12s ease-in-out infinite;
+        }
+
+        @keyframes floatOne {
+
+            0%,
+            100% {
+                transform: translate(0, 0);
+            }
+
+            50% {
+                transform: translate(40px, 35px);
+            }
+        }
+
+        @keyframes floatTwo {
+
+            0%,
+            100% {
+                transform: translate(0, 0);
+            }
+
+            50% {
+                transform: translate(-35px, -40px);
+            }
+        }
+
+
+        /* =====================================================
+           GOVERNMENT TOP BAR & MAIN NAVBAR
+        ===================================================== */
+
+        .govt-topbar {
+            background: #040D1E;
+            border-bottom: 1px solid rgba(248, 241, 223, 0.08);
+            font-size: 11px;
+            color: #C9C2B2;
+        }
+
+        .accessibility-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(248, 241, 223, 0.15);
+            color: #F8F1DF;
+            border-radius: 4px;
+            padding: 1px 6px;
+            font-size: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .accessibility-btn:hover {
+            background: #D4A94C;
+            color: #07152F;
+            border-color: #D4A94C;
+        }
+
+        .main-navbar {
+            background: rgba(7, 21, 47, 0.94);
+            border-bottom: 1px solid rgba(212, 169, 76, 0.22);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+
+        .portal-brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+            transition: transform 0.25s ease;
+            flex-shrink: 0;
+            white-space: nowrap;
+        }
+
+        .portal-brand:hover {
+            transform: translateY(-1px);
+        }
+
+        .brand-badge {
+            position: relative;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #F8F1DF 0%, #E5B869 100%);
+            color: #07152F;
+            font-family: 'Space Mono', monospace;
+            font-size: 1.15rem;
+            font-weight: 700;
+            box-shadow: 0 6px 20px rgba(212, 169, 76, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            flex-shrink: 0;
+        }
+
+        .brand-badge::after {
+            content: "";
+            position: absolute;
+            width: 7px;
+            height: 7px;
+            top: 5px;
+            right: 5px;
+            border-radius: 50%;
+            background: #138808;
+            box-shadow: 0 0 8px #138808;
+        }
+
+        .brand-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #F8F1DF;
+            line-height: 1.1;
+            white-space: nowrap;
+        }
+
+        .brand-tagline {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.65rem;
+            letter-spacing: 0.14em;
+            color: #D4A94C;
+            text-transform: uppercase;
+            margin-top: 3px;
+            white-space: nowrap;
+        }
+
+        .nav-link-item {
+            color: #C9C2B2;
+            font-size: 0.88rem;
+            font-weight: 500;
+            text-decoration: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .nav-link-item:hover {
+            color: #F8F1DF;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .nav-link-item.active {
+            color: #F3D98B;
+            background: rgba(212, 169, 76, 0.12);
+            border: 1px solid rgba(212, 169, 76, 0.25);
+        }
+
+        .officer-portal-btn {
+            background: rgba(45, 91, 160, 0.25);
+            border: 1px solid rgba(129, 155, 194, 0.35);
+            color: #C0D6F5;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.78rem;
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .officer-portal-btn:hover {
+            background: rgba(45, 91, 160, 0.45);
+            border-color: rgba(129, 155, 194, 0.7);
+            color: #FFFFFF;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 14px rgba(45, 91, 160, 0.3);
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hero {
+            animation:
+                heroReveal 0.9s ease forwards;
+        }
+
+        @keyframes heroReveal {
+
+            from {
+                opacity: 0;
+                transform: translateY(28px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        .hero-title {
+            background:
+                linear-gradient(120deg,
+                    #FFFFFF 0%,
+                    #F8F1DF 45%,
+                    #BCD2F1 100%);
+
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            color: transparent;
+
+            letter-spacing: -0.045em;
+        }
+
+
+        .hero-line {
+            width: 70px;
+            height: 2px;
+
+            margin: 26px auto 0;
+
+            border-radius: 999px;
+
+            background: #F8F1DF;
+
+            animation:
+                lineGrow 1s ease 0.3s both;
+        }
+
+        @keyframes lineGrow {
+
+            from {
+                opacity: 0;
+                transform: scaleX(0);
+            }
+
+            to {
+                opacity: 1;
+                transform: scaleX(1);
+            }
+        }
+
+
+        /* =====================================================
+           CREAM CARDS WITH GOLDEN BORDERS & GRID
+        ===================================================== */
+
+        .card {
+            position: relative;
+
+            background-color: #F8F1DF;
+
+            background-image:
+                radial-gradient(circle at 100% 0%, rgba(212, 169, 76, 0.12) 0%, transparent 45%),
+                linear-gradient(rgba(212, 169, 76, 0.07) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(212, 169, 76, 0.07) 1px, transparent 1px);
+
+            background-size: 100% 100%, 28px 28px, 28px 28px;
+
+            border:
+                1px solid rgba(212, 169, 76, 0.42);
+
+            border-top:
+                3px solid #D4A94C;
+
+            border-radius: 18px;
+
+            color: #0B2347;
+
+            box-shadow:
+                0 16px 45px rgba(0, 0, 0, 0.22),
+                0 0 15px rgba(212, 169, 76, 0.08);
+
+            overflow: hidden;
+
+            transition:
+                transform 0.4s cubic-bezier(.2, .8, .2, 1),
+                box-shadow 0.4s ease,
+                border-color 0.4s ease;
+        }
+
+
+        .card::before {
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 3px;
+
+            background:
+                linear-gradient(90deg,
+                    transparent,
+                    #D4A94C,
+                    #F3D98B,
+                    #D4A94C,
+                    transparent);
+
+            opacity: 0.8;
+
+            transition:
+                opacity 0.4s ease;
+        }
+
+
+        .card:hover {
+            transform:
+                translateY(-7px);
+
+            border-color:
+                #D4A94C;
+
+            box-shadow:
+                0 16px 45px rgba(212, 169, 76, 0.24),
+                0 30px 75px rgba(0, 0, 0, 0.35);
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+
+        /* =====================================================
+           CARD TEXT
+        ===================================================== */
+
+        .card-heading {
+            color: #0B2347;
+        }
+
+        .card-text {
+            color: #40516B;
+        }
+
+        .card-muted {
+            color: #65748A;
+        }
+
+
+        /* =====================================================
+           SECTION LABEL
+        ===================================================== */
+
+        .section-label {
+            color: #9A7629;
+
+            font-family:
+                "Space Mono",
+                monospace;
+
+            font-size: 10px;
+
+            letter-spacing: 0.22em;
+
+            font-weight: 700;
+        }
+
+
+        /* =====================================================
+           ICON BOX
+        ===================================================== */
+
+        .icon-box {
+            width: 48px;
+            height: 48px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 12px;
+
+            background: #07152F;
+
+            border:
+                1px solid rgba(212, 169, 76, 0.38);
+
+            color: #F8F1DF;
+
+            font-family:
+                "Space Mono",
+                monospace;
+
+            transition:
+                background 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.3s ease,
+                color 0.3s ease;
+        }
+
+        .card:hover .icon-box {
+            background: #0A2045;
+
+            border-color: #D4A94C;
+
+            color: #D4A94C;
+
+            transform:
+                scale(1.08);
+
+            box-shadow:
+                0 8px 24px rgba(212, 169, 76, 0.28);
+        }
+
+
+        /* =====================================================
+           IO CIRCLE
+        ===================================================== */
+
+        .io-circle {
+            position: relative;
+
+            width: 145px;
+            height: 145px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            border:
+                1px solid rgba(212, 169, 76, 0.35);
+
+            background:
+                radial-gradient(circle,
+                    rgba(212, 169, 76, 0.12),
+                    rgba(11, 35, 71, 0.025));
+        }
+
+
+        .io-circle::before {
+            content: "";
+
+            position: absolute;
+
+            inset: 10px;
+
+            border-radius: 50%;
+
+            border:
+                1px dashed rgba(212, 169, 76, 0.40);
+
+            animation:
+                rotateCircle 18s linear infinite;
+        }
+
+        @keyframes rotateCircle {
+
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+
+        /* =====================================================
+           FEATURE NUMBER
+        ===================================================== */
+
+        .feature-number {
+            color: #8C7241;
+
+            font-family:
+                "Space Mono",
+                monospace;
+
+            font-size: 11px;
+
+            letter-spacing: 0.08em;
+
+            font-weight: 700;
+
+            transition:
+                color 0.3s ease,
+                transform 0.3s ease;
+        }
+
+        .feature-card:hover .feature-number {
+            color: #D4A94C;
+
+            transform:
+                translateX(4px);
+        }
+
+
+        /* =====================================================
+           ROADMAP
+        ===================================================== */
+
+        .roadmap-item {
+            position: relative;
+
+            border:
+                1px solid rgba(212, 169, 76, 0.32);
+
+            background: rgba(248, 241, 223, 0.82);
+
+            background-image:
+                linear-gradient(rgba(212, 169, 76, 0.06) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(212, 169, 76, 0.06) 1px, transparent 1px);
+
+            background-size: 20px 20px;
+
+            border-radius: 14px;
+
+            transition:
+                transform 0.3s ease,
+                border-color 0.3s ease,
+                background 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .roadmap-item:hover {
+            transform:
+                translateX(5px);
+
+            border-color:
+                #D4A94C;
+
+            background:
+                #F8F1DF;
+
+            box-shadow:
+                0 10px 25px rgba(212, 169, 76, 0.20);
+        }
+
+        .roadmap-label {
+            color: #9A7629;
+
+            font-weight: 700;
+        }
+
+
+        /* =====================================================
+           FINAL BOX
+        ===================================================== */
+
+        .final-box {
+            position: relative;
+
+            padding: 75px 30px;
+
+            border-radius: 22px;
+
+            overflow: hidden;
+
+            background:
+                radial-gradient(circle at 50% 0%,
+                    rgba(212, 169, 76, 0.20),
+                    transparent 55%),
+                linear-gradient(135deg,
+                    #0A2045,
+                    #07152F);
+
+            border:
+                1px solid rgba(212, 169, 76, 0.35);
+
+            border-top:
+                3px solid #D4A94C;
+
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.45);
+        }
+
+
+        .final-box::before {
+            content: "";
+
+            position: absolute;
+
+            width: 340px;
+            height: 340px;
+
+            left: 50%;
+            top: 50%;
+
+            transform:
+                translate(-50%, -50%);
+
+            border-radius: 50%;
+
+            border:
+                1px solid rgba(212, 169, 76, 0.15);
+
+            animation:
+                finalPulse 5s ease-in-out infinite;
+        }
+
+        @keyframes finalPulse {
+
+            0%,
+            100% {
+                transform:
+                    translate(-50%, -50%) scale(0.95);
+            }
+
+            50% {
+                transform:
+                    translate(-50%, -50%) scale(1.05);
+            }
+        }
+
+
+        /* =====================================================
+           REVEAL ANIMATION
+        ===================================================== */
+
+        .reveal {
+            opacity: 0;
+
+            transform:
+                translateY(25px);
+
+            animation:
+                revealUp 0.75s ease forwards;
+        }
+
+        .delay-1 {
+            animation-delay: 0.12s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.24s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.36s;
+        }
+
+        @keyframes revealUp {
+
+            to {
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+        }
+
+
+        /* =====================================================
+           DIVIDER
+        ===================================================== */
+
+        .divider {
+            height: 1px;
+
+            background:
+                linear-gradient(90deg,
+                    transparent,
+                    rgba(212, 169, 76, 0.40),
+                    transparent);
+        }
+
+
+        /* =====================================================
+           SCROLLBAR
+        ===================================================== */
+
+        ::-webkit-scrollbar {
+            width: 7px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #06132B;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #294B78;
+
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #547FB7;
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 768px) {
+
+            .nav-links {
+                gap: 10px;
+            }
+
+            .nav-link {
+                display: none;
+            }
+
+            .logo-mark {
+                width: 48px;
+                height: 48px;
+
+                font-size: 16px;
+            }
+
+            .logo-name {
+                font-size: 20px;
+            }
+
+            .logo-subtitle {
+                font-size: 7px;
+            }
+
+            .hero-title {
+                font-size: 42px;
+            }
+
+            .io-circle {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    </style>
+
+</head>
+
+
+<body class="blueprint-grid">
+
+    <!-- Background -->
+    <div class="orb orb-one"></div>
+    <div class="orb orb-two"></div>
+
+
+    <!-- =====================================================
+         OFFICIAL GOVERNMENT TOP BAR
+    ===================================================== -->
+    <div class="govt-topbar py-1.5 px-4 sm:px-6 lg:px-8">
+        <div class="w-full flex flex-wrap justify-between items-center gap-2">
+            <!-- Left: National Authority Identity -->
+            <div class="flex items-center gap-2.5">
+                <!-- Ashoka Emblem / National Crest SVG -->
+                <svg class="w-4 h-5 text-[#D4A94C]" viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    aria-label="National Emblem">
+                    <path d="M12 2L15 5H9L12 2Z" fill="currentColor" />
+                    <path d="M7 6H17V9H7V6Z" fill="currentColor" fill-opacity="0.8" />
+                    <path d="M5 10H19V12H5V10Z" fill="currentColor" />
+                    <circle cx="12" cy="16" r="3.5" stroke="currentColor" stroke-width="1.2" />
+                    <path d="M12 13V19M9 16H15M10 14L14 18M10 18L14 14" stroke="currentColor" stroke-width="0.8" />
+                    <path d="M4 21H20V23H4V21Z" fill="currentColor" />
+                    <path d="M6 24H18V26H6V24Z" fill="currentColor" />
+                </svg>
+                <div class="leading-tight">
+                    <span
+                        class="font-semibold text-[#F8F1DF] text-[11px] tracking-wide uppercase whitespace-nowrap">Government
+                        of India</span>
+                    <span class="hidden sm:inline text-[#819BC2] text-[11px] mx-1.5">•</span>
+                    <span class="hidden sm:inline text-[#C9C2B2] text-[11px]">Ministry of Commerce & Industry</span>
+                </div>
+            </div>
+
+            <!-- Right: Accessibility, Language & Helpline -->
+            <div class="flex items-center gap-3 text-[11px]">
+                <div class="hidden md:flex items-center gap-1.5 text-[#C9C2B2]">
+                    <span class="text-[#D4A94C]">📞</span>
+                    <span>Toll-Free Support: <strong>1800-11-4646</strong> (09:00 - 18:00 IST)</span>
+                </div>
+                <div class="hidden sm:flex items-center gap-1">
+                    <button type="button" class="accessibility-btn" onclick="adjustFontSize(-1)"
+                        title="Decrease font size">A-</button>
+                    <button type="button" class="accessibility-btn" onclick="adjustFontSize(0)"
+                        title="Reset font size">A</button>
+                    <button type="button" class="accessibility-btn" onclick="adjustFontSize(1)"
+                        title="Increase font size">A+</button>
+                </div>
+                <span class="text-[#819BC2] hidden sm:inline">|</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- =====================================================
+         MAIN NAVIGATION BAR
+    ===================================================== -->
+    <header class="main-navbar">
+        <div class="w-full px-4 sm:px-6 lg:px-8 h-20 flex justify-between items-center">
+            <!-- Brand Logo -->
+            <a href="home.html" class="portal-brand">
+                <div class="brand-badge">IO</div>
+                <div>
+                    <h1 class="brand-title">IndustryOne</h1>
+                    <p class="brand-tagline">National Single Window Industrial Clearance System</p>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden lg:flex items-center gap-4 xl:gap-6 flex-shrink-0">
+                <a href="home.html" class="nav-link-item mr-2 xl:mr-4">Home</a>
+                <a href="About.html" class="nav-link-item active">About Us</a>
+                <a href="Helpdesk.html" class="nav-link-item">Helpdesk</a>
+
+                <!-- Officer / Department Portal Gateway -->
+                <a href="AdminLogin.html" class="officer-portal-btn ml-2 xl:ml-3"
+                    title="For Authorized Verification Officers">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                    Administrative Portal
+                </a>
+            </nav>
+
+            <!-- Mobile Hamburger Toggle -->
+            <button id="hamburger-btn" class="block lg:hidden p-2 text-white hover:text-[#D4A94C] focus:outline-none"
+                aria-label="Toggle navigation menu" onclick="toggleMobileMenu()">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden px-6 py-4 bg-[#05132B] border-b border-[#D4A94C]/20 space-y-3">
+            <a href="home.html" class="block py-2 text-[#C9C2B2] hover:text-white border-b border-white/5">Home</a>
+            <a href="login.html" class="block py-2 text-[#C9C2B2] hover:text-white border-b border-white/5">Applicant
+                Sign In</a>
+            <a href="About.html" class="block py-2 text-[#D4A94C] font-semibold border-b border-white/5">About
+                Portal</a>
+            <a href="Helpdesk.html" class="block py-2 text-[#C9C2B2] hover:text-white border-b border-white/5">Helpdesk
+                & Support</a>
+            <a href="Applicant.html" class="block py-2 text-[#C9C2B2] hover:text-white border-b border-white/5">New
+                Registration</a>
+            <a href="AdminLogin.html" class="block py-2 text-[#819BC2] hover:text-white">Officer / Department Portal
+                →</a>
+        </div>
+    </header>
+
+
+    <!-- =====================================================
+         MAIN
+    ===================================================== -->
+
+    <main>
+
+
+        <!-- =================================================
+             HERO
+        ================================================= -->
+
+        <section class="hero px-6 pb-20 pt-24 lg:px-8">
+
+            <div class="mx-auto max-w-5xl text-center">
+
+                <h1 class="hero-title mt-7 text-5xl
+                           font-bold leading-[1.05]
+                           sm:text-6xl
+                           lg:text-7xl">
+
+                    About our IndustryOne
+
+                </h1>
+
+
+                <div class="hero-line"></div>
+
+
+                <p class="mx-auto mt-7 max-w-2xl
+                           text-sm leading-7
+                           text-[#B7C7DE]
+                           sm:text-base">
+
+                    IndustryOne is a digital industrial approval
+                    management platform designed to make complex
+                    approval processes simpler, faster, transparent
+                    and easier to track.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             WHO WE ARE
+        ================================================= -->
+
+        <section class="px-6 py-10 lg:px-8">
+
+            <div class="mx-auto max-w-6xl">
+
+                <div class="divider mb-12">
+                </div>
+
+
+                <div class="card reveal p-8 md:p-10">
+
+                    <div class="grid gap-12
+                               lg:grid-cols-[1fr_auto]
+                               lg:items-center">
+
+
+                        <div>
+
+                            <p class="section-label mb-3">
+
+                                01 / WHO WE ARE
+
+                            </p>
+
+
+                            <h2 class="card-heading mb-5
+                                       text-2xl font-bold
+                                       tracking-tight
+                                       md:text-3xl">
+
+                                A smarter way to manage
+                                industrial approvals.
+
+                            </h2>
+
+
+                            <p class="card-text max-w-2xl
+                                       text-sm leading-7">
+
+                                Our platform connects industries,
+                                applicants, licence officers and
+                                administrative authorities through
+                                one centralized digital ecosystem.
+                                IndustryOne helps reduce manual
+                                paperwork, improve communication
+                                and provide clear visibility
+                                throughout the approval journey.
+
+                            </p>
+
+
+                            <p class="card-muted mt-5 max-w-2xl
+                                       text-sm leading-7">
+
+                                From submitting an application to
+                                document verification and final
+                                approval, every stage can be managed
+                                in an organized and transparent
+                                environment.
+
+                            </p>
+
+                        </div>
+
+
+                        <!-- IO CIRCLE -->
+
+                        <div class="flex justify-center lg:pr-6">
+
+                            <div class="io-circle">
+
+                                <div class="relative z-10 text-center">
+
+                                    <div class="font-mono text-3xl
+                                               font-bold
+                                               text-[#0B2347]">
+
+                                        IO
+
+                                    </div>
+
+                                    <div class="mt-1 font-mono text-[8px]
+                                               tracking-[0.3em]
+                                               text-[#65748A]">
+
+                                        SYSTEM
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             MISSION / VISION
+        ================================================= -->
+
+        <section class="px-6 py-12 lg:px-8">
+
+            <div class="mx-auto max-w-6xl">
+
+                <div class="grid gap-6 md:grid-cols-2">
+
+
+                    <!-- MISSION -->
+
+                    <div class="card reveal delay-1 p-8">
+
+                        <div class="mb-7 flex items-center gap-4">
+
+                            <div class="icon-box">
+                                M
+                            </div>
+
+                            <div>
+
+                                <p class="section-label">
+                                    02 / PURPOSE
+                                </p>
+
+                                <h2 class="card-heading text-2xl
+                                           font-bold">
+
+                                    Our Mission
+
+                                </h2>
+
+                            </div>
+
+                        </div>
+
+
+                        <p class="card-text text-sm leading-7">
+
+                            Our mission is to simplify industrial
+                            approval processes by replacing
+                            complicated manual procedures with a
+                            structured digital system. We aim to
+                            make applications easier to submit,
+                            review and monitor.
+
+                        </p>
+
+                    </div>
+
+
+                    <!-- VISION -->
+
+                    <div class="card reveal delay-2 p-8">
+
+                        <div class="mb-7 flex items-center gap-4">
+
+                            <div class="icon-box">
+                                V
+                            </div>
+
+                            <div>
+
+                                <p class="section-label">
+                                    03 / DIRECTION
+                                </p>
+
+                                <h2 class="card-heading text-2xl
+                                           font-bold">
+
+                                    Our Vision
+
+                                </h2>
+
+                            </div>
+
+                        </div>
+
+
+                        <p class="card-text text-sm leading-7">
+
+                            We envision a connected industrial
+                            ecosystem where approval procedures
+                            are transparent, efficient and
+                            technology-driven, allowing businesses
+                            and authorities to work together
+                            more effectively.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             PLATFORM
+        ================================================= -->
+
+        <section class="px-6 py-14 lg:px-8">
+
+            <div class="mx-auto max-w-6xl">
+
+
+                <div class="mb-10">
+
+                    <p class="mb-2 text-[10px]
+                               font-mono tracking-[0.22em]
+                               text-[#D4A94C]">
+
+                        04 / PLATFORM
+
+                    </p>
+
+
+                    <h2 class="text-3xl font-bold
+                               tracking-tight
+                               text-[#F8F1DF]">
+
+                        What We Provide
+
+                    </h2>
+
+
+                    <p class="mt-3 max-w-xl
+                               text-sm leading-6
+                               text-[#93A9C6]">
+
+                        Everything needed to bring industrial
+                        approval workflows into one connected
+                        digital environment.
+
+                    </p>
+
+                </div>
+
+
+                <div class="grid gap-5
+                           md:grid-cols-2
+                           lg:grid-cols-3">
+
+
+                    <!-- 01 -->
+
+                    <div class="card feature-card reveal delay-1 p-7">
+
+                        <div class="feature-number mb-6">
+
+                            [01]
+
+                        </div>
+
+                        <h3 class="card-heading mb-3
+                                   text-lg font-bold">
+
+                            Digital Applications
+
+                        </h3>
+
+                        <p class="card-text text-sm leading-6">
+
+                            Submit industrial approval applications
+                            digitally without depending on lengthy
+                            manual paperwork.
+
+                        </p>
+
+                    </div>
+
+
+                    <!-- 02 -->
+
+                    <div class="card feature-card reveal delay-2 p-7">
+
+                        <div class="feature-number mb-6">
+
+                            [02]
+
+                        </div>
+
+                        <h3 class="card-heading mb-3
+                                   text-lg font-bold">
+
+                            Application Tracking
+
+                        </h3>
+
+                        <p class="card-text text-sm leading-6">
+
+                            Track applications through different
+                            stages and understand exactly where
+                            an application stands.
+
+                        </p>
+
+                    </div>
+
+
+                    <!-- 03 -->
+
+                    <div class="card feature-card reveal delay-3 p-7">
+
+                        <div class="feature-number mb-6">
+
+                            [03]
+
+                        </div>
+
+                        <h3 class="card-heading mb-3
+                                   text-lg font-bold">
+
+                            Document Management
+
+                        </h3>
+
+                        <p class="card-text text-sm leading-6">
+
+                            Keep important documents organized and
+                            accessible throughout the approval
+                            process.
+
+                        </p>
+
+                    </div>
+
+
+                    <!-- 04 -->
+
+                    <div class="card feature-card reveal delay-1 p-7">
+
+                        <div class="feature-number mb-6">
+
+                            [04]
+
+                        </div>
+
+                        <h3 class="card-heading mb-3
+                                   text-lg font-bold">
+
+                            Officer Review
+
+                        </h3>
+
+                        <p class="card-text text-sm leading-6">
+
+                            Licence officers can review submitted
+                            information, verify documents and
+                            provide decisions.
+
+                        </p>
+
+                    </div>
+
+
+                    <!-- 05 -->
+
+                    <div class="card feature-card reveal delay-2 p-7">
+
+                        <div class="feature-number mb-6">
+
+                            [05]
+
+                        </div>
+
+                        <h3 class="card-heading mb-3
+                                   text-lg font-bold">
+
+                            Notifications
+
+                        </h3>
+
+                        <p class="card-text text-sm leading-6">
+
+                            Applicants can receive updates about
+                            important changes to their approval
+                            applications.
+
+                        </p>
+
+                    </div>
+
+
+                    <!-- 06 -->
+
+                    <div class="card feature-card reveal delay-3 p-7">
+
+                        <div class="feature-number mb-6">
+
+                            [06]
+
+                        </div>
+
+                        <h3 class="card-heading mb-3
+                                   text-lg font-bold">
+
+                            Reports & Analytics
+
+                        </h3>
+
+                        <p class="card-text text-sm leading-6">
+
+                            Authorities can use reports and
+                            analytics to monitor applications
+                            and improve administration.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             APPROVAL LIFECYCLE: 4-STEP WORKFLOW
+        ================================================= -->
+
+        <section class="px-6 py-14 lg:px-8">
+
+            <div class="mx-auto max-w-6xl">
+
+                <div class="mb-10 text-center">
+
+                    <p class="mb-2 text-[10px]
+                               font-mono tracking-[0.22em]
+                               text-[#D4A94C]">
+
+                        05 / APPROVAL LIFECYCLE
+
+                    </p>
+
+                    <h2 class="text-3xl font-bold
+                               tracking-tight
+                               text-[#F8F1DF]">
+
+                        How IndustryOne Transforms Industrial Approvals
+
+                    </h2>
+
+                    <p class="mt-3 max-w-2xl mx-auto
+                               text-sm leading-6
+                               text-[#93A9C6]">
+
+                        Replace 30+ physical departmental visits with one composite digital application lifecycle
+                        governed by strict statutory SLAs.
+
+                    </p>
+
+                </div>
+
+
+                <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+
+                    <!-- Step 1: Common Application Form -->
+                    <div class="card reveal delay-1 p-7 relative flex flex-col justify-between">
+                        <div>
+                            <div class="feature-number mb-4 text-[#D4A94C] font-mono text-xl font-bold">
+                                [01]
+                            </div>
+                            <h3 class="card-heading mb-3 text-lg font-bold">
+                                Common Application Form
+                            </h3>
+                            <p class="card-text text-sm leading-6 mb-4">
+                                Submit unified enterprise profile with Udyam / PAN. One form auto-populates documents
+                                for 36+ departments via DigiLocker.
+                            </p>
+                        </div>
+                        <div
+                            class="pt-3 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-[#93A9C6]">
+                            <span>Single Submission</span>
+                            <span class="text-[#22c55e]">✓ Zero Duplication</span>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Smart Dept Routing -->
+                    <div class="card reveal delay-2 p-7 relative flex flex-col justify-between">
+                        <div>
+                            <div class="feature-number mb-4 text-[#D4A94C] font-mono text-xl font-bold">
+                                [02]
+                            </div>
+                            <h3 class="card-heading mb-3 text-lg font-bold">
+                                Smart Dept Routing
+                            </h3>
+                            <p class="card-text text-sm leading-6 mb-4">
+                                Rule-based AI engine classifies your industry (White/Green/Orange/Red) and broadcasts
+                                applications in parallel to all statutory bodies.
+                            </p>
+                        </div>
+                        <div
+                            class="pt-3 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-[#93A9C6]">
+                            <span>Parallel Scrutiny</span>
+                            <span class="text-[#D4A94C]">⚡ Instant Dispatch</span>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Joint E-Inspection -->
+                    <div class="card reveal delay-3 p-7 relative flex flex-col justify-between">
+                        <div>
+                            <div class="feature-number mb-4 text-[#D4A94C] font-mono text-xl font-bold">
+                                [03]
+                            </div>
+                            <h3 class="card-heading mb-3 text-lg font-bold">
+                                Joint E-Inspection
+                            </h3>
+                            <p class="card-text text-sm leading-6 mb-4">
+                                Synchronized, risk-based inspection by multiple departments on a single notified date
+                                with geo-tagged verification uploaded in 48 hours.
+                            </p>
+                        </div>
+                        <div
+                            class="pt-3 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-[#93A9C6]">
+                            <span>Transparent Audit</span>
+                            <span class="text-[#6ee7b7]">📍 Geo-Tagged</span>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Composite Digital NOC -->
+                    <div class="card reveal delay-4 p-7 relative flex flex-col justify-between">
+                        <div>
+                            <div class="feature-number mb-4 text-[#D4A94C] font-mono text-xl font-bold">
+                                [04]
+                            </div>
+                            <h3 class="card-heading mb-3 text-lg font-bold">
+                                Composite Digital NOC
+                            </h3>
+                            <p class="card-text text-sm leading-6 mb-4">
+                                Download unified QR-code verified statutory license with legal digital signatures.
+                                Recognized by banks and statutory authorities nationwide.
+                            </p>
+                        </div>
+                        <div
+                            class="pt-3 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-[#93A9C6]">
+                            <span>Instant Download</span>
+                            <span class="text-[#22c55e]">🔒 Digitally Signed</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             ECOSYSTEM
+        ================================================= -->
+
+        <section class="px-6 py-14 lg:px-8">
+
+            <div class="mx-auto max-w-6xl">
+
+
+                <div class="mb-10 text-center">
+
+                    <p class="mb-2 text-[10px]
+                               font-mono tracking-[0.22em]
+                               text-[#D4A94C]">
+
+                        06 / ECOSYSTEM
+
+                    </p>
+
+
+                    <h2 class="text-3xl font-bold
+                               tracking-tight
+                               text-[#F8F1DF]">
+
+                        Who Uses IndustryOne?
+
+                    </h2>
+
+                </div>
+
+
+                <div class="grid gap-6 md:grid-cols-3">
+
+
+                    <!-- INDUSTRIES -->
+
+                    <div class="card reveal delay-1
+                               p-8 text-center">
+
+                        <div class="icon-box mx-auto mb-6">
+
+                            I
+
+                        </div>
+
+                        <h3 class="card-heading mb-3
+                                   text-lg font-bold">
+
+                            Industries
+
+                        </h3>
+
+                        <p class="card-text text-sm leading-6">
+
+                            Businesses can submit applications,
+                            upload documents and monitor approval
+                            progress.
+
+                        </p>
+
+                    </div>
+
+
+                    <!-- OFFICERS -->
+
+                    <div class="card reveal delay-2
+                               p-8 text-center">
+
+                        <div class="icon-box mx-auto mb-6">
+
+                            O
+
+                        </div>
+
+                        <h3 class="card-heading mb-3
+                                   text-lg font-bold">
+
+                            Licence Officers
+
+                        </h3>
+
+                        <p class="card-text text-sm leading-6">
+
+                            Officers can verify documents, review
+                            applications and provide approval or
+                            rejection decisions.
+
+                        </p>
+
+                    </div>
+
+
+                    <!-- AUTHORITIES -->
+
+                    <div class="card reveal delay-3
+                               p-8 text-center">
+
+                        <div class="icon-box mx-auto mb-6">
+
+                            A
+
+                        </div>
+
+                        <h3 class="card-heading mb-3
+                                   text-lg font-bold">
+
+                            Authorities
+
+                        </h3>
+
+                        <p class="card-text text-sm leading-6">
+
+                            Administrative authorities can monitor
+                            approval activity and access useful
+                            reports.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             FUTURE SCOPE
+        ================================================= -->
+
+        <section class="px-6 py-14 lg:px-8">
+
+            <div class="mx-auto max-w-6xl">
+
+
+                <div class="card p-8 md:p-10">
+
+
+                    <div class="mb-10">
+
+                        <p class="section-label mb-2">
+
+                            07 / ROADMAP
+
+                        </p>
+
+
+                        <h2 class="card-heading text-3xl
+                                   font-bold tracking-tight">
+
+                            Future Scope
+
+                        </h2>
+
+                    </div>
+
+
+                    <div class="grid gap-4 md:grid-cols-2">
+
+
+                        <!-- AI -->
+
+                        <div class="roadmap-item p-6">
+
+                            <p class="roadmap-label mb-2
+                                       font-mono text-[10px]
+                                       tracking-[0.2em]">
+
+                                01 / AI
+
+                            </p>
+
+
+                            <h3 class="mb-2 font-bold
+                                       text-[#0B2347]">
+
+                                AI-Assisted Verification
+
+                            </h3>
+
+
+                            <p class="text-sm leading-6
+                                       text-[#53627A]">
+
+                                AI can assist in identifying missing
+                                information and supporting document
+                                verification.
+
+                            </p>
+
+                        </div>
+
+
+                        <!-- MOBILE -->
+
+                        <div class="roadmap-item p-6">
+
+                            <p class="roadmap-label mb-2
+                                       font-mono text-[10px]
+                                       tracking-[0.2em]">
+
+                                02 / MOBILE
+
+                            </p>
+
+
+                            <h3 class="mb-2 font-bold
+                                       text-[#0B2347]">
+
+                                Mobile Accessibility
+
+                            </h3>
+
+
+                            <p class="text-sm leading-6
+                                       text-[#53627A]">
+
+                                Mobile applications can make
+                                industrial approval services
+                                accessible from anywhere.
+
+                            </p>
+
+                        </div>
+
+
+                        <!-- INTEGRATION -->
+
+                        <div class="roadmap-item p-6">
+
+                            <p class="roadmap-label mb-2
+                                       font-mono text-[10px]
+                                       tracking-[0.2em]">
+
+                                03 / INTEGRATION
+
+                            </p>
+
+
+                            <h3 class="mb-2 font-bold
+                                       text-[#0B2347]">
+
+                                Government Integration
+
+                            </h3>
+
+
+                            <p class="text-sm leading-6
+                                       text-[#53627A]">
+
+                                The platform can integrate with
+                                other government services and
+                                verification systems.
+
+                            </p>
+
+                        </div>
+
+
+                        <!-- ANALYTICS -->
+
+                        <div class="roadmap-item p-6">
+
+                            <p class="roadmap-label mb-2
+                                       font-mono text-[10px]
+                                       tracking-[0.2em]">
+
+                                04 / ANALYTICS
+
+                            </p>
+
+
+                            <h3 class="mb-2 font-bold
+                                       text-[#0B2347]">
+
+                                Advanced Analytics
+
+                            </h3>
+
+
+                            <p class="text-sm leading-6
+                                       text-[#53627A]">
+
+                                Advanced dashboards can help
+                                authorities understand approval
+                                trends and performance.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             FINAL MESSAGE
+        ================================================= -->
+
+        <section class="px-6 py-20 lg:px-8">
+
+            <div class="mx-auto max-w-5xl">
+
+
+                <div class="final-box text-center">
+
+
+                    <div class="relative z-10">
+
+
+                        <p class="mb-4 font-mono text-[10px]
+                                   tracking-[0.3em]
+                                   text-[#B9D0EF]">
+
+                            INDUSTRYONE
+
+                        </p>
+
+
+                        <h2 class="text-3xl font-bold
+                                   tracking-tight
+                                   text-[#F8F1DF]
+                                   md:text-5xl">
+
+                            Making Industrial Approvals
+
+                            <br>
+
+                            <span class="text-[#C9DCF5]">
+                                simpler.
+                            </span>
+
+                        </h2>
+
+
+                        <p class="mx-auto mt-6 max-w-2xl
+                                   text-sm leading-7
+                                   text-[#A4B7D1]">
+
+                            IndustryOne brings industries and
+                            authorities together through a
+                            transparent, structured and
+                            technology-driven approval ecosystem.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
+    <footer class="border-t border-white/[0.07]
+               bg-[#051126]">
+
+        <div class="mx-auto flex max-w-6xl
+                   flex-col items-center
+                   justify-between gap-4
+                   px-6 py-8
+                   text-center
+                   md:flex-row md:text-left">
+
+
+            <div>
+
+                <p class="font-bold text-[#F8F1DF]">
+
+                    IndustryOne
+
+                </p>
+
+                <p class="mt-1 font-mono text-[9px]
+                           tracking-[0.18em]
+                           text-[#61799E]">
+
+                    INDUSTRIAL APPROVAL MANAGEMENT SYSTEM
+
+                </p>
+
+            </div>
+
+
+            <p class="text-xs text-[#61799E]">
+
+                Developed by Team IndustryOne
+                <br>
+                © 2026 IndustryOne | All rights reserved.
+
+            </p>
+
+        </div>
+
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu) {
+                menu.classList.toggle('hidden');
+            }
+        }
+
+        let currentFontSize = 16;
+        function adjustFontSize(delta) {
+            if (delta === 0) {
+                currentFontSize = 16;
+            } else {
+                currentFontSize = Math.min(20, Math.max(12, currentFontSize + delta * 2));
+            }
+            document.documentElement.style.fontSize = currentFontSize + 'px';
+        }
+    </script>
+</body>
+
+</html>

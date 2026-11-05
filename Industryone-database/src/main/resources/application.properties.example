@@ -1,0 +1,30 @@
+# =============================================================================
+# IndustryOne - Example Configuration Template
+# Copy this file to 'application.properties' or set environment variables:
+#   DB_URL, DB_USERNAME, DB_PASSWORD
+# =============================================================================
+
+spring.application.name=IndustryOne
+server.port=8080
+
+# --- Database Connection (Supabase / PostgreSQL) ---
+spring.datasource.url=${DB_URL:jdbc:postgresql://db.<PROJECT_REF>.supabase.co:5432/postgres?sslmode=require}
+spring.datasource.username=${DB_USERNAME:postgres}
+spring.datasource.password=${DB_PASSWORD:YOUR_DATABASE_PASSWORD}
+
+# --- Hibernate & JPA Settings ---
+spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=false
+spring.jpa.properties.hibernate.format_sql=true
+spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation=true
+
+# --- HikariCP Connection Pool Settings ---
+spring.datasource.hikari.maximum-pool-size=5
+spring.datasource.hikari.minimum-idle=1
+spring.datasource.hikari.idle-timeout=30000
+spring.datasource.hikari.connection-timeout=20000
+spring.datasource.hikari.max-lifetime=1800000
+
+server.error.include-message=never
+server.error.include-stacktrace=never

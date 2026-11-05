@@ -1,0 +1,56 @@
+# =============================================================================
+# IndustryOne - Git Ignore Configuration
+# =============================================================================
+
+# --- Maven Build Outputs ---
+target/
+**/target/
+*.class
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# --- Maven Runtime & Dependencies ---
+.mvn/wrapper/maven-wrapper.jar
+.mvn/.extracted/
+
+# --- IDE & Editor Settings ---
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+*.sublime-project
+*.sublime-workspace
+.project
+.classpath
+.settings/
+
+# --- Operating System Files ---
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+[Dd]esktop.ini
+
+# --- Logs & Temp Files ---
+*.log
+logs/
+*.tmp
+*.bak
+*.swp
+*.swo
+*~
+
+# --- Environment & Secret Credentials ---
+*.env
+*.env.local
+*.env.*.local
+application-local.properties
+application-credentials.properties
